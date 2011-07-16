@@ -159,7 +159,7 @@ function smp_is_page_allowed(){
 			$found = false;
 			foreach($paths as $path){
 				$path = trim($path);
-				if (strcmp($path, $_SERVER["REQUEST_URI"]) == 0 || strcmp($path, $full_url) == 0 || strpos($full_url, $path)){
+				if (strcmp($path, $_SERVER["REQUEST_URI"]) == 0 || strcmp($path, $full_url) == 0 || @strpos($full_url, $path) == FALSE){
 					if ($popup_list_mode == 1) {
 						$res = false;//exclusion
 						$found = true;
